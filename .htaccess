@@ -1,0 +1,7 @@
+RewriteEngine On
+#Acepta solicitudes de archivos que no sean php, como css o js
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-l
+#Primero debera ingresar a index.php, de esta manera siempre sera el punto de salida index.php
+RewriteRule ^(.*)$ index.php?url=$1 [L,QSA]
